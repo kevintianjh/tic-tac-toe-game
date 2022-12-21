@@ -1,20 +1,29 @@
 package com.kevintian;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class LaunchApplication {
 	
 	public static void main(String[] args) {
 		
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("Hello, please specify grid size (3-9) for your game: ");
-		int gridSize = Integer.parseInt(scanner.nextLine());
+		int gridSize = 0;
+		String gridSizeStr = null;
 		
-		if(gridSize < 3 || gridSize > 9) {
-			System.out.println("Invalid value");
-			scanner.close();
-			return;
+		while(true) {
+			System.out.print("Hello, please specify grid size (3-9) for your game: ");
+			gridSizeStr = scanner.nextLine();
+			
+			if(Pattern.matches("^[3-9]$", gridSizeStr)) {
+				break;
+			}
+			else {
+				System.out.println("Invalid value, please enter again"); 
+			}
 		}
+		
+		gridSize = Integer.parseInt(gridSizeStr);
 		
 		System.out.print("Use smarter CPU opponent? (y/n): ");
 		String input = scanner.nextLine();
@@ -35,10 +44,17 @@ public class LaunchApplication {
 		while(true) {
 			ttt.printBoard();
 			System.out.print("Player, kindly enter your position (1-" + choiceRange + "): "); 
-			int choice = Integer.parseInt(scanner.nextLine());
+			String choiceStr = scanner.nextLine();
+			
+			if(!Pattern.matches("^[0-9]{1,2}$", choiceStr)) {
+				System.out.println("Invalid value, please enter again");
+				continue;
+			}
+			
+			int choice = Integer.parseInt(choiceStr);
 			
 			if(choice < 1 || choice > choiceRange) {
-				System.out.println("Invalid value");
+				System.out.println("Invalid value, please enter again");
 				continue;
 			}
 			
