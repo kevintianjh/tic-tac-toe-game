@@ -1,6 +1,6 @@
 # tic-tac-toe-game
  
-A command line variable grid (up to 9x9) tic tac toe game written in Java that demonstrated the benefit of object-oriented design
+A command line selectable grid (up to 9x9) tic tac toe game written in Java that demonstrated the benefit of object-oriented design
 
 Enhancements made on top of original specifications
 1) User can choose the gridsize from 3x3 to 9x9.
