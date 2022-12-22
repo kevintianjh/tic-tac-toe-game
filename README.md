@@ -9,4 +9,6 @@ A command line selectable grid (up to 9x9) tic tac toe game written in Java that
 
 3) A simple demostation of polymorphism. CPUOpponent will determine the next move against player with its nextMove() method. CPUOpponent implemented a simple nextMove() method that selects a random spot left on game grid. SmarterCPUOpponent extends CPUOpponent and overides the nextMove() method which selects an available winning move to CPU, or block any available winning move to player, and if both not available, selects a random spot. Say in the future an even smarter CPUOpponent is created, the change is easy
 
+<br/>
+
 <img src="tic-tac-toe-ss.png" style="width: 75%;" />
